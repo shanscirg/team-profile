@@ -1,6 +1,4 @@
-const fs = require("fs");
 
-let start = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,34 +19,7 @@ let start = `
         </div>
         <div class="container">
         <div class="row">
-            <div class='col'>`
-
-let middle = function (team) {
-    let string = [];
-    let card = [];
-    for (let i = 0; i < team.length; i++) {
-        string.push(team[i]);
-        console.log('this is the string with each team member pushed', string);
-        console.log(`traversing string: employee name = ${string[i].name}`);
-        if (i % 2 === 0 && i !== 0) {
-            console.log('i', i);
-            card.push(`</div><div class='col'>`)
-        } else if (i % 4 === 0 && i !== 0) {
-            card.push('<div class="row">');
-        }
-        if (string[i].title === "Manager"){
-            card.push(`<div class='card'><h2>${string[i].name}</h2><h3>${string[i].title}</h3><h4>ID#: ${string[i].id}</h4><h4>Email: <a href="mailto:${string[i].email}">${string[i].email}</a></h4><h4>Office: ${string[i].officeNumber}</h4></div>`)
-        } else if (string[i].title === "Intern"){
-            card.push(`<div class='card'><h2>${string[i].name}</h2><h3>${string[i].title}</h3><h4>ID#: ${string[i].id}</h4><h4>Email:  <a href="mailto:${string[i].email}">${string[i].email}</a></h4><h4>School: ${string[i].school}</h4></div>`)
-        } else if (string[i].title === "Engineer"){
-            card.push(`<div class='card'><h2>${string[i].name}</h2><h3>${string[i].title}</h3><h4>ID#: ${string[i].id}</h4><h4>Email: <a href="mailto:${string[i].email}">${string[i].email}</a></h4><h4>GitHub: <a href="https://github.com/${string[i].github}">${string[i].github}</a></h4></div>`)
-        }
-    }
-    return card.join("");
-
-}
-
-let end = `
+            <div class='col'><div class='card'><h2>f</h2><h3>Manager</h3><h4>ID#: f</h4><h4>Email: <a href="mailto:f">f</a></h4><h4>Office: f</h4></div><div class='card'><h2>r</h2><h3>Intern</h3><h4>ID#: r</h4><h4>Email:  <a href="mailto:r">r</a></h4><h4>School: r</h4></div></div><div class='col'><div class='card'><h2>b</h2><h3>Engineer</h3><h4>ID#: b</h4><h4>Email: <a href="mailto:b">b</a></h4><h4>GitHub: <a href="https://github.com/b">b</a></h4></div>
 </div>    
 </div>
 </div>
@@ -218,14 +189,4 @@ let end = `
     }
 </style>
 
-</html>`
-
-const generateHTML = function (team) {
-    const html = start + middle(team) + end;
-    return html;
-}
-
-
-module.exports = {
-    generateHTML: generateHTML
-}
+</html>
